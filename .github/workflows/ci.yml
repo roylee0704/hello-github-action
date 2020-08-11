@@ -20,11 +20,11 @@ jobs:
 
       # A name for your step to display on GitHub.
       - name: Runs only on pull request
-        run: echo is pull request event ${{ toJson(github) }}
+        run: echo is pull request event
         if: ${{ github.event_name == 'pull_request' }}
 
       - name: Runs only if push
-        run: echo is push event ${{ toJson(github) }}
+        run: echo is push event
         if: ${{ github.event_name == 'push' }}
 
       - name: Runs a multi-line script
