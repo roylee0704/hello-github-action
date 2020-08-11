@@ -14,6 +14,9 @@ on:
 jobs:
   printInputs:
     runs-on: ubuntu-latest
+    # only allows to run on master
+    if: github.ref == 'refs/heads/master'
+
     steps:
       - run: |
           echo "Log level: ${{ github.event.inputs.logLevel }}"
