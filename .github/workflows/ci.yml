@@ -24,7 +24,7 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
 
       - name: Runs only if push
-        run: echo is push event ${{ toJson(github) }}
+        run: echo is push event ${{ github }}
         if: ${{ github.event_name == 'push' }}
 
       - name: Runs a multi-line script
