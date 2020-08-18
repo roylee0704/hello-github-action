@@ -14,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Tag and Push Docker Image (release)
-
       - uses: actions/checkout@v1
 
       - name: Set output
