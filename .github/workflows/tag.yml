@@ -16,5 +16,4 @@ jobs:
     steps:
       - name: Tag and Push Docker Image (release)
         run: |
-          export TAGGED_ECR_REPO = "ecr-repo:"${{ github.event.release.tag_name }}
-          echo $TAGGED_ECR_REPO
+          echo "ecr-repo:${{ github.event.release.tag_name }}"
