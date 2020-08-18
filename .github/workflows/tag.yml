@@ -1,0 +1,20 @@
+# a release is going to be done any time we create a release tag for our
+# project
+# https://gitlab.com/LondonAppDev/recipe-app-api-devops-course-material/snippets/1965273
+# https://github.com/eriktisme/recipe-app-api-proxy/blob/master/.github/workflows/release.yml
+name: Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  testRelease:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Tag and Push Docker Image (release)
+        run: |
+          export TAGGED_ECR_REPO = ecr-repo:${{ github.event.release.tag_name }}
+          echo $TAGGED_ECR_REPO
