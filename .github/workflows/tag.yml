@@ -23,7 +23,7 @@ jobs:
       - name: Check output
         env:
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-          HELLO: $RELEASE_VERSION:world:${{ steps.vars.outputs.tag }}
+          HELLO: ${{ $RELEASE_VERSION:world }}:${{ steps.vars.outputs.tag }}
         run: |
           echo $HELLO
           echo $RELEASE_VERSION
