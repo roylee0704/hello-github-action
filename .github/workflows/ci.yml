@@ -32,3 +32,8 @@ jobs:
         run: |
           echo Add other actions to build, 
           echo test, and deploy your project
+
+      # step 5
+      - name: run make commands (with env)
+        run: | 
+          make printenv ENV=staging SECRET=foo
