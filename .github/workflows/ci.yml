@@ -42,7 +42,7 @@ jobs:
       # step 6
       - name: Run sh -ac command to export env
         run: | 
-          sh -ac 'ls;pwd;ls -a;source .env.prod; echo $ENV'
+          sh -ac 'ls;pwd;ls -a;. ./.env.prod; echo $ENV'
 
       # step 7
       - name: Inject env within make command context
