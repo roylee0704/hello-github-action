@@ -40,6 +40,9 @@ jobs:
           echo $ENV
 
       # step 6
+      # why cant use source within sh: https://stackoverflow.com/questions/13702425/source-command-not-found-in-sh-shell
+      # . replaces source 
+      # might requires relative path to use .
       - name: Run sh -ac command to export env
         run: | 
           sh -ac 'ls;pwd;ls -a;. ./.env.prod; echo $ENV'
