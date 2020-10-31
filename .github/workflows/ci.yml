@@ -34,6 +34,12 @@ jobs:
           echo test, and deploy your project
 
       # step 5
-      - name: run make commands (with env)
+      - name: Run source command to export env
+        run: | 
+          source .env.staging
+          echo $ENV
+
+      # step 6
+      - name: Inject env within make command context
         run: | 
           make printenv ENV=staging SECRET=foo
