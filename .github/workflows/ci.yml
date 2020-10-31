@@ -40,6 +40,11 @@ jobs:
           echo $ENV
 
       # step 6
+      - name: Run sh -ac command to export env
+        run: | 
+          sh -ac '. .env.prod ; echo $ENV'
+
+      # step 7
       - name: Inject env within make command context
         run: | 
           make printenv ENV=staging SECRET=foo
